@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inventory Manager</title>
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="assets/styles.css" />
 </head>
 <body>
@@ -12,12 +12,13 @@
         <header class="w3-bar w-blue">
             <div class="w3-row w3-blue">
                 <div class="w3-bar-item">Logo</div>
-                <div class="w3-bar-item w3-right">Logout</div>
+                <div class="w3-bar-item w3-right"><a href="index.html">Logout</a></div>
             </div>
             <div class="w3-row-padding w3-light-gray">
                 <button class="w3-bar-item w3-button w3-small" onclick="openTab('dashboard-tab')">Dashboard</button>
                 <button class="w3-bar-item w3-button w-round-xlarge w3-small" onclick="openTab('transact-tab')">Transact</button>
                 <button class="w3-bar-item w3-button w-round-xlarge w3-small" onclick="openTab('inventory-tab')">Inventory</button>
+                <button class="w3-bar-item w3-button w-round-xlarge w3-small" onclick="openTab('reports-tab')">Reports</button>
             </div> 
         </header>
     </div>
@@ -86,9 +87,7 @@
                                 <div class="w3-row-padding">
                                     <div class="w3-col">
                                         <select id="item" name="item" class="w3-input" placeholder="Item">
-                                            <option>Manchester United Home Small 2023 </option>
-                                            <option>Barcelona Home Small 2023 </option>
-                                            <option>AC Milan United Home Small 2023 </option>
+                                            <option></option>
                                         </select>
                                     </div>
                                     <br>
@@ -143,20 +142,13 @@
             <div class="w3-row"> 
                 <div class="w3-col">
                     <table id="inventory-list" class="w3-table-all">
-                        <tr>
-                          <th>ID</th>
-                          <th class="w3-left-align">Name</th>
-                          <th class="w3-center">List Price</th>
-                          <th class="w3-center">Qty</th>
-                          <th class="w3-center">$</th>
-                        </tr> 
-                        <tr>
-                            <td class="w3-center">1</td>
-                            <td id="club" class="w3-left-align">Manchester United Football Club</td>
-                            <td class="w3-center">$25.00</td>
-                            <td class="w3-center">5</td>
-                            <td class="w3-center">$125.00</td>
-                        </tr>                    
+                            <tr>
+                              <th>ID</th>
+                              <th class="w3-left-align">Name</th>
+                              <th class="w3-center">List Price</th>
+                              <th class="w3-center">Qty</th>
+                              <th class="w3-center">$</th>
+                            </tr>     
                     </table>
                 </div>      
             </div>
@@ -168,7 +160,7 @@
                         <span id="close-add-new-item-pop-up" class="w3-button w3-small w3-display-topright">&times;</span>
                     </header>
     
-                    <form>
+                    <form id="add-to-inventory-list-form" action="#">
                         <div class="w3-row-padding">
                             <div class="w3-col l6">
                                 <input type ="text" id="new-item-name" name="new-item-name" class="w3-input" placeholder="Item name"></input>
@@ -180,7 +172,7 @@
                         <br> 
                         <div class="w3-row-padding">
                             <div class="w3-col s3">
-                                <button id="create-new-item-btn"class="w3-button w3-blue w3-round w3-tiny">Create</button>
+                                <button id="create-item-btn"class="w3-button w3-blue w3-round w3-tiny">Create</button>
                             </div>
                         </div> 
                         <br> 
