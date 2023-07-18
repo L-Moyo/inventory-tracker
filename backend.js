@@ -4,7 +4,12 @@ var id=inventory.length+1
 function addInventory(name,price){
     
     var product={id:id,item:name, price:price};
-    inventory.push(product); 
+    inventory.push(product);
+    
+
+    $("#item").append( 
+        "<option>"+product.item+"</option>"     
+    );
     
         
 }
@@ -23,12 +28,11 @@ function refreshInventoryTable(){
 }
 
 function loadItemDropDown(){
-
+    alert("im fine");
     i=0;
-    $.each(inventory,function(){        
-        $("#item").append( 
-            "<option>"+$('td').val()+"</option>"     
-        );
+
+    $.each($("#inventory-list>tr"),function(){        
+        
         i++;
  
     })

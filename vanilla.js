@@ -59,9 +59,9 @@ $(document).ready(function(){
 
     $(".show-transact-pop-up").click(function(){
 
-        /*$.getScript("backend.js",function(){      
+        $.getScript("backend.js",function(){      
            loadItemDropDown();
-          })*/
+          })
 
 
      $("#transact-pop-up-title").text(($(this).text()));
