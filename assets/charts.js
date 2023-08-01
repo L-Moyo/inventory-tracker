@@ -44,7 +44,7 @@ var spark1 = {
     },
   },
   stroke: {
-    curve: 'straight'
+    curve: 'smooth'
   },
   fill: {
     opacity: 1,
@@ -62,7 +62,7 @@ var spark1 = {
   },
   colors: ['#DCE6EC'],
   title: {
-    text: '$424,652',
+    text: '$0',
     offsetX: 30,
     style: {
       fontSize: '24px',
@@ -90,7 +90,7 @@ var spark2 = {
     },
   },
   stroke: {
-    curve: 'straight'
+    curve: 'smooth'
   },
   fill: {
     opacity: 1,
@@ -136,7 +136,7 @@ var spark3 = {
     },
   },
   stroke: {
-    curve: 'straight'
+    curve: 'smooth'
   },
   fill: {
     opacity: 1,
@@ -215,7 +215,7 @@ var monthlyEarningsOpt = {
     }
   },
   subtitle: {
-    text: '$135,965',
+    text: '$0',
     offsetX: -30,
     offsetY: 100,
     align: 'right',
@@ -384,7 +384,7 @@ var optionsBar = {
     type: 'bar',
     height: '100%',
     width: '100%',
-    stacked: true,
+    stacked: false,
   },
   plotOptions: {
     bar: {
@@ -393,16 +393,16 @@ var optionsBar = {
   },
   colors: colorPalette,
   series: [{
-    name: "Clothing",
-    data: [42, 52, 16, 55, 59, 51, 45, 32, 26, 33, 44, 51, 42, 56],
-  }, {
+    name: "Sales",
+    data: [42, 52, 16, 55, 59, 51, 45, 32, 26, 33, 44, 51],
+  }, /*{
     name: "Food Products",
     data: [6, 12, 4, 7, 5, 3, 6, 4, 3, 3, 5, 6, 7, 4],
-  }],
-  labels: [10,11,12,13,14,15,16,17,18,19,20,21,22,23],
+  }*/],
+  labels: ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'],
   xaxis: {
     labels: {
-      show: false
+      show: true
     },
     axisBorder: {
       show: false
@@ -466,8 +466,8 @@ var optionDonut = {
       fontSize: '18px'
     }
   },
-  series: [21, 23, 19, 14, 6],
-  labels: ['Clothing', 'Food Products', 'Electronics', 'Kitchen Utility', 'Gardening'],
+  series: [5, 5, 5, 5],
+  labels: ['Transport', 'Rentals', 'Salaries And Wages', 'Internet'],
   legend: {
     position: 'top',
     offsetY: 0
