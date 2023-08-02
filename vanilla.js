@@ -1,9 +1,11 @@
 import item, { shoppingListLine } from "./oop.js";
 
+
+
 $(document).ready(function () {
     var inventory = [];
     var shoppingList = [];
-
+    m = ['l'];
     // start add new item----------------------
     $("#show-add-new-item-pop-up").click(function () {
         $("#add-new-item-pop-up").fadeToggle();
@@ -95,6 +97,65 @@ $(document).ready(function () {
 
 
 
-    })
+    });
 
+    var optionsBar = {
+        chart: {
+            type: 'bar',
+            height: '100%',
+            width: '100%',
+            stacked: false,
+        },
+        plotOptions: {
+            bar: {
+                columnWidth: '45%',
+            }
+        },
+        colors: colorPalette,
+        series: [{
+            name: "Sales",
+            data: [42, 52, 16, 55, 59, 51, 45, 32, 26, 33, 44, 51],
+        }, /*{
+          name: "Food Products",
+          data: [6, 12, 4, 7, 5, 3, 6, 4, 3, 3, 5, 6, 7, 4],
+        }*/],
+        labels: ['kiki', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+        xaxis: {
+            labels: {
+                show: true
+            },
+            axisBorder: {
+                show: false
+            },
+            axisTicks: {
+                show: false
+            },
+        },
+        yaxis: {
+            axisBorder: {
+                show: false
+            },
+            axisTicks: {
+                show: false
+            },
+            labels: {
+                style: {
+                    colors: '#78909c'
+                }
+            }
+        },
+        title: {
+            text: 'Monthly Sales',
+            align: 'left',
+            style: {
+                fontSize: '18px'
+            }
+        }
+
+    }
+
+    var chartBar = new ApexCharts(document.querySelector('#bar'), optionsBar);
+    chartBar.render();
+    
+    alert('hi')
 });

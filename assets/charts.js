@@ -1,3 +1,5 @@
+
+
 Apex.grid = {
   padding: {
     right: 0,
@@ -379,7 +381,7 @@ var optionsArea = {
 var chartArea = new ApexCharts(document.querySelector('#area'), optionsArea);
 chartArea.render();
 
-var optionsBar = {
+ var optionsBar = {
   chart: {
     type: 'bar',
     height: '100%',

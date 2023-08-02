@@ -69,14 +69,23 @@
 
     <div id="transact-tab" class="tab-item" style="display:none">
         <div class="w3-row-padding w3-padding-16">
-            <div class="w3-col s6 m3 l2 w3-center">
-                <button id="sell-btn" class="show-transact-pop-up w3-button w3-blue w3-round w3-xlarge"
-                    style="width:100%">Sell</button>
+            <div class="w3-col s6 m3 l3 w3-center w3-padding-8">
+                <button id="sell-btn" class="w3-button w3-round w3-xlarge w3-margin-top w3-border" style="width:100%">
+                    <div class=w3-row-padding>
+                        <span><i class="material-icons">shopping_bag</i></span>
+                        <div id="Sell" class="show-transact-pop-up">Sell</div>
+                        <div class="w3-tiny">Sell inventory here</div>
+                    </div>
+                </button>
             </div>
-
-            <div class="w3-col s6 m3 l2 w3-center">
-                <button id="buy-btn" class="show-transact-pop-up w3-button w3-blue w3-round w3-xlarge"
-                    style="width:100%">Purchase</button>
+            <div class="w3-col s6 m3 l3 w3-center w3-padding-8">
+                <button id="buy-btn" class="w3-button w3-round w3-xlarge w3-margin-top w3-border" style="width:100%">
+                    <div class=w3-row-padding>
+                        <span><i class="material-icons">shopping_bag</i></span>
+                        <div id="Buy" class="show-transact-pop-up">Purchase</div>
+                        <div class="w3-tiny">Buy inventory here</div>
+                    </div>
+                </button>
             </div>
         </div>
 
@@ -153,13 +162,13 @@
             <div class="w3-col">
                 <table class="w3-table-all">
                     <thead>
-                       
-                            <th>ID</th>
-                            <th class="w3-left-align">Name</th>
-                            <th class="w3-center">List Price</th>
-                            <th class="w3-center">Qty</th>
-                            <th class="w3-center">$</th>
-                      
+
+                        <th>ID</th>
+                        <th class="w3-left-align">Name</th>
+                        <th class="w3-center">List Price</th>
+                        <th class="w3-center">Qty</th>
+                        <th class="w3-center">$</th>
+
 
                     </thead>
                     <tbody id="inventory-list"></tbody>
@@ -200,9 +209,9 @@
 
     <script src="jquery.js"></script>
     <script type="module" src="vanilla.js"></script>
-    <script src="charts/apexcharts.min.js"></script>
+    <script type="module" src="charts/apexcharts.min.js"></script>
     <script src="assets/data.js"></script>
-    <script src="assets/charts.js"></script>
+    <script  type="module" src="assets/charts.js"></script>
 
 
     <script>
