@@ -28,7 +28,7 @@ function refreshInventoryTable(){
 }
 
 function loadItemDropDown(){
-    alert("im fine");
+ 
     i=0;
 
     $.each($("#inventory-list>tr"),function(){        
