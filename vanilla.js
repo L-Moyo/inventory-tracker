@@ -1,5 +1,8 @@
 import item, { shoppingListLine } from "./oop.js";
 var inventory = [];
+var grandTotal = 0;
+var tsales = 0;
+var tpurchases = 0;
 
 function addData(chart, label, newData) {
     chart.data.labels.push(label);
@@ -10,9 +13,10 @@ function addData(chart, label, newData) {
 }
 
 function removeData(chart) {
-     chart.data.labels=[];
+    chart.data.labels = [];
     chart.data.datasets.forEach((dataset) => {
-        dataset.data=[];})
+        dataset.data = [];
+    })
 
     chart.update();
 }
@@ -41,13 +45,7 @@ var c = new Chart(ctx, {
 $(document).ready(function () {
 
     var shoppingList = [];
-
-  
-     
-
- 
-
-
+    var tsales = 0;
 
 
 
@@ -63,7 +61,7 @@ $(document).ready(function () {
 
         const p = new item(inventory.length + 1, $("#new-item-name").val(), $("#new-item-list-price").val());
         inventory.push(p);
-     
+
         $("#item").append(
             "<option>" + p.name + "</option>"
         );
@@ -93,7 +91,9 @@ $(document).ready(function () {
 
 
         shoppingList = [];
+        grandTotal = 0;
         $("#items-list").empty();
+        $("#grand-total").text(0)
 
         $("#transact-pop-up-title").text(($(this).text()));
         $("#transact-pop-up").fadeToggle();
@@ -103,22 +103,29 @@ $(document).ready(function () {
         $("#transact-pop-up").fadeToggle();
     });
 
-    var grandTotal = 0;
+
 
     $("#add-item-btn").click(function (event) {
         event.preventDefault();
         i = 0;
         inventory.forEach(function () {
             if (inventory[i].name == $("#item").val()) {
-                const sp = new shoppingListLine($("#item").val(), Number($("#qty").val()), inventory[i].listPrice);
+                var price = ($('#transact-pop-up-title').text() == 'Purchase') ? 0.8 * inventory[i].listPrice : inventory[i].listPrice
+                const sp = new shoppingListLine($("#item").val(), Number($("#qty").val()), price);
                 shoppingList.push(sp);
-               
+
                 console.log(shoppingList);
                 $("#items-list").append(
                     "<tr><td>" + sp.name + "</td><td class='w3-center'>" + sp.listPrice + "</td><td class='w3-center'>" + sp.quantity + "</td><td class='w3-center'>" + sp.total + "</td></tr>"
                 );
-                grandTotal = grandTotal + sp.total;
+                grandTotal +=sp.total;
+                ($('#transact-pop-up-title').text() == 'Purchase') ? tpurchases += sp.total : tsales += sp.total;
+
                 $("#grand-total").text(grandTotal);
+
+                ($('#transact-pop-up-title').text() == 'Purchase') ? $("#tpurchases").text(tpurchases) : $("#tsales").text(tsales);
+
+                $("#tprofit").text(0.2*tsales);
             }
             i++;
         })
@@ -128,7 +135,7 @@ $(document).ready(function () {
 
     $('#post-btn').click(function (event) {
         event.preventDefault();
-        
+
         var h = 0;
         shoppingList.forEach(function () {
             var i = 0;
@@ -142,6 +149,7 @@ $(document).ready(function () {
 
                     if ($('#transact-pop-up-title').text() == 'Purchase') {
                         inventory[i].quantity += adjustment;
+
                     }
                     else {
                         inventory[i].quantity -= adjustment
@@ -150,8 +158,8 @@ $(document).ready(function () {
                 $("#inventory-list").append(
                     "<tr><td class='w3-center'>" + inventory[i]['id'] + "</td><td>" + inventory[i]['name'] + "</td><td class='w3-center'>" + inventory[i]['listPrice'] + "</td><td class='w3-center'>" + inventory[i]['quantity'] + "</td><td class= 'w3-centre'><button class='w3-button w3-blue w3-round w3-tiny'>Edit</button></td></tr>"
                 );
-               
-                addData(c,inventory[i]['name'],inventory[i]['quantity'])
+
+                addData(c, inventory[i]['name'], inventory[i]['quantity'])
                 i++;
             })
             h++;
