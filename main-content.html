@@ -9,20 +9,22 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 </head>
 
-<body>
+<body class="w3-light-gray">
     <div class="w3-top">
         <header class="w3-bar w-blue">
             <!---logo part-->
             <div class="w3-row w3-white">
                 <div class="w3-col s8">
-                    <img href="https://l-moyo.github.io/index.html" src="logos/cover.png" class="w3-bar-item w3-display-top"
-                        style=" width: 200px;height:10%">
+                    <img href="https://l-moyo.github.io/index.html" src="logos/cover.png"
+                        class="w3-bar-item w3-display-top" style=" width: 200px;height:10%">
                 </div>
-                <div class="w3-bar-item w3-right"><a href="https://l-moyo.github.io/index.html"><i class="material-icons">home</i></a></div>
+                <div class="w3-bar-item w3-right"><a href="https://l-moyo.github.io/index.html"><i
+                            class="material-icons">home</i></a></div>
             </div>
             <!--- end logo part-->
             <div class="w3-row-padding w3-blue">
-                <button class="w3-bar-item w3-button w3-small" onclick="openTab('dashboard-tab')"><b>Dashboard</b></button>
+                <button class="w3-bar-item w3-button w3-small"
+                    onclick="openTab('dashboard-tab')"><b>Dashboard</b></button>
                 <button class="w3-bar-item w3-button w-round-xlarge w3-small"
                     onclick="openTab('transact-tab')"><b>Transact</b></button>
                 <button class="w3-bar-item w3-button w-round-xlarge w3-small"
@@ -32,55 +34,61 @@
             </div>
         </header>
     </div>
-    <br><br><br><br><br><br>
-    <div class="w3-margin">
-        <div id="dashboard-tab" class="tab-item w3-margin" style="display:block">
+    <br><br><br><br><br>
+    <div>
+        <div id="dashboard-tab" class="tab-item" style="display:block">
             <div class="w3-row-padding">
-                <div class="w3-col m4 w3-padding">
-                    <div class="w3-card w3-round w3-padding">
+                <div class="w3-col m4 w3-margin-top">
+                    <div class="w3-card w3-white">
                         <header class="w3-container w3-blue">
                             <h4>Sales</h4>
-                          </header>
-                          <footer class="w3-container">
+                        </header>
+                        <footer class="w3-container">
                             <h1 id="tsales">0</h1>
-                          </footer>
+                        </footer>
                     </div>
                 </div>
 
-                <div class="w3-col m4 w3-padding">
-                    <div class="w3-card w3-round w3-padding">
+                <div class="w3-col m4 w3-margin-top">
+                    <div class="w3-card w3-white">
                         <header class="w3-container w3-blue">
                             <h4>Purchases</h4>
-                          </header>
-                          <footer class="w3-container">
+                        </header>
+                        <footer class="w3-container">
                             <h1 id="tpurchases">0</h1>
-                          </footer>
+                        </footer>
                     </div>
                 </div>
 
-                <div class="w3-col m4 w3-padding">
-                    <div class="w3-card w3-round w3-padding">
+                <div class="w3-col m4 w3-margin-top">
+                    <div class="w3-card w3-white">
                         <header class="w3-container w3-blue">
                             <h4>Profit</h4>
-                          </header>
-                          <footer class="w3-container">
+                        </header>
+                        <footer class="w3-container">
                             <h1 id="tprofit">0</h1>
-                          </footer>
+                        </footer>
                     </div>
                 </div>
+
             </div>
             <br>
             <div class="w3-row-padding">
                 <div class="w3-col">
-                    <div class="w3-card w3-round">
-                        <!--<div id="bar"></div>-->
-                        
+                    <div class="w3-card w3-white">
+                        <header class="w3-container w3-blue">
+                            <h4>Inventory</h4>
+                        </header>
+                        <section class="w3-container">
                             <canvas id="myChart"></canvas>
-                          
+                        </section>
+                        <footer class="w3-container">
+
+                        </footer>
                     </div>
                 </div>
             </div>
-            <br>
+
         </div>
     </div>
 
@@ -153,7 +161,7 @@
                                         <th class="w3-center">Total</th>
                                     </tr>
                                 </thead>
-                                <tbody id="items-list" ></tbody>
+                                <tbody id="items-list"></tbody>
                             </table>
                         </div>
 
@@ -227,7 +235,7 @@
     <script src="jquery.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script type="module" src="vanilla.js"></script>
- 
+
 
 
     <script>
