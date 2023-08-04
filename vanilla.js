@@ -37,11 +37,13 @@ var c = new Chart(ctx, {
     options: {
         scales: {
             y: {
-                beginAtZero: true
-            }
+                beginAtZero: true,
+            },
+
         },
-        maintainAspectRatio:false,
-        aspectRatio:2
+
+        maintainAspectRatio: false,
+        aspectRatio: 2
     }
 })
 const salesChart = document.getElementById('mySalesChart');
@@ -62,9 +64,15 @@ var sc = new Chart(salesChart, {
                 beginAtZero: true
             }
         },
-        maintainAspectRatio:false,
-        aspectRatio:1
-    }
+        maintainAspectRatio: false,
+        aspectRatio: 1,
+        plugins: {
+            legend: {
+                display: false,
+                
+            }
+        },
+    },
 })
 
 const purchasesChart = document.getElementById('myPurchasesChart');
@@ -87,14 +95,13 @@ var pc = new Chart(purchasesChart, {
         },
 
         plugins: {
-            title: {
+            legend: {
                 display: false,
-                text: 'kiki',
-                position: 'bottom'
+                
             }
         },
-        maintainAspectRatio:false,
-        aspectRatio:1
+        maintainAspectRatio: false,
+        aspectRatio: 1
     }
 })
 
@@ -111,13 +118,9 @@ var prc = new Chart(profitChart, {
         }]
     },
     options: {
-        scales: {
-            y: {
-                beginAtZero: true
-            }
-        },
-        maintainAspectRatio:false,
-        aspectRatio:1
+        
+        maintainAspectRatio: false,
+        aspectRatio: 1
     }
 })
 
