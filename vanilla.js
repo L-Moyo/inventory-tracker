@@ -43,7 +43,9 @@ var c = new Chart(ctx, {
         },
 
         maintainAspectRatio: false,
-        aspectRatio: 1
+        aspectRatio: 1,
+        borderRadius:{topLeft:3,topRight:3},
+      
     }
 })
 const salesChart = document.getElementById('mySalesChart');
@@ -61,7 +63,8 @@ var sc = new Chart(salesChart, {
     options: {
         scales: {
             y: {
-                beginAtZero: true
+                beginAtZero: true,
+               
             }
         },
         maintainAspectRatio: false,
@@ -101,7 +104,9 @@ var pc = new Chart(purchasesChart, {
             }
         },
         maintainAspectRatio: false,
-        aspectRatio: 1
+        aspectRatio: 1,
+        borderRadius:{topLeft:3,topRight:3},
+        
     }
 })
 
