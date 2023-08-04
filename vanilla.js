@@ -43,7 +43,7 @@ var c = new Chart(ctx, {
         },
 
         maintainAspectRatio: false,
-        aspectRatio: 2
+        aspectRatio: 1
     }
 })
 const salesChart = document.getElementById('mySalesChart');
