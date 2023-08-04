@@ -39,7 +39,9 @@ var c = new Chart(ctx, {
             y: {
                 beginAtZero: true
             }
-        }
+        },
+        maintainAspectRatio:false,
+        aspectRatio:2
     }
 })
 const salesChart = document.getElementById('mySalesChart');
@@ -47,10 +49,10 @@ const salesChart = document.getElementById('mySalesChart');
 var sc = new Chart(salesChart, {
     type: 'line',
     data: {
-        labels: ['Jan','Feb','Mar','Apr','May','Jun'],
+        labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
         datasets: [{
             label: 'Sales',
-            data: [14,15,16,20,6,13],
+            data: [14, 15, 16, 20, 6, 13],
             borderWidth: 1
         }]
     },
@@ -59,7 +61,9 @@ var sc = new Chart(salesChart, {
             y: {
                 beginAtZero: true
             }
-        }
+        },
+        maintainAspectRatio:false,
+        aspectRatio:1
     }
 })
 
@@ -68,10 +72,10 @@ const purchasesChart = document.getElementById('myPurchasesChart');
 var pc = new Chart(purchasesChart, {
     type: 'bar',
     data: {
-        labels: ['Jan','Feb','Mar','Apr','May','Jun'],
+        labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
         datasets: [{
             label: 'Sales',
-            data: [23,5,65,45,33,50],
+            data: [23, 5, 65, 45, 33, 50],
             borderWidth: 1
         }]
     },
@@ -80,7 +84,17 @@ var pc = new Chart(purchasesChart, {
             y: {
                 beginAtZero: true
             }
-        }
+        },
+
+        plugins: {
+            title: {
+                display: false,
+                text: 'kiki',
+                position: 'bottom'
+            }
+        },
+        maintainAspectRatio:false,
+        aspectRatio:1
     }
 })
 
@@ -89,10 +103,10 @@ const profitChart = document.getElementById('myProfitChart');
 var prc = new Chart(profitChart, {
     type: 'doughnut',
     data: {
-        labels: ['Jan','Feb','Mar','Apr','May','Jun'],
+        labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
         datasets: [{
             label: 'Profits',
-            data: [23,5,65,45,33,50],
+            data: [23, 5, 65, 45, 33, 50],
             borderWidth: 1
         }]
     },
@@ -101,7 +115,9 @@ var prc = new Chart(profitChart, {
             y: {
                 beginAtZero: true
             }
-        }
+        },
+        maintainAspectRatio:false,
+        aspectRatio:1
     }
 })
 
@@ -185,14 +201,14 @@ $(document).ready(function () {
                 $("#items-list").append(
                     "<tr><td>" + sp.name + "</td><td class='w3-center'>" + sp.listPrice + "</td><td class='w3-center'>" + sp.quantity + "</td><td class='w3-center'>" + sp.total + "</td></tr>"
                 );
-                grandTotal +=sp.total;
+                grandTotal += sp.total;
                 ($('#transact-pop-up-title').text() == 'Purchase') ? tpurchases += sp.total : tsales += sp.total;
 
                 $("#grand-total").text(grandTotal);
 
                 ($('#transact-pop-up-title').text() == 'Purchase') ? $("#tpurchases").text(tpurchases) : $("#tsales").text(tsales);
 
-                $("#tprofit").text(0.2*tsales);
+                $("#tprofit").text(0.2 * tsales);
             }
             i++;
         })
