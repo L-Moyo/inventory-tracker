@@ -39,12 +39,15 @@
         <div id="dashboard-tab" class="tab-item" style="display:block">
             <div class="w3-row-padding">
                 <div class="w3-col m3 w3-margin-top">
-                    <div class="w3-card w3-white w3-blue">
+                    <div class="w3-card w3-white">
                         <header class="w3-container">
-                            <h3 class="w3-bottombar w3-border-blue">Sales</h3>
+                            <h3 class="w3-bottomba w3-border-blue">Sales:<span id="tsales" class="w3-right">0</span></h3>
                         </header>
-                        <footer class="w3-container">
-                            <h1 id="tsales">0</h1>
+                        <section class="w3-container">
+                            <canvas id="mySalesChart"></canvas>
+                        </section>
+                        <footer class="w3-container w3-blue">
+
                         </footer>
                     </div>
                 </div>
@@ -52,10 +55,12 @@
                 <div class="w3-col m3 w3-margin-top">
                     <div class="w3-card w3-white">
                         <header class="w3-container">
-                            <h3 class="w3-bottombar w3-border-red">Purchases</h3>
+                            <h3 class="w3-bottomba w3-border-red">Purchases:<span id="tpurchases" class="w3-right">0</span></h3>
                         </header>
-                        <footer class="w3-container">
-                            <h1 id="tpurchases">0</h1>
+                        <section class="w3-container">
+                            <canvas id="myPurchasesChart"></canvas>
+                        </section>
+                        <footer class="w3-container w3-red">
                         </footer>
                     </div>
                 </div>
@@ -63,10 +68,13 @@
                 <div class="w3-col m3 w3-margin-top">
                     <div class="w3-card w3-white">
                         <header class="w3-container">
-                            <h3 class="w3-bottombar w3-border-green">Profit</h3>
+                            <h3 class="w3-bottomba w3-border-green">Profit:<span id="tprofit" class="w3-right">0</span></h3>
                         </header>
+                        <section class="w3-container">
+                            <canvas id="myProfitChart"></canvas>
+                        </section>
                         <footer class="w3-container">
-                            <h1 id="tprofit">0</h1>
+                           
                         </footer>
                     </div>
                 </div>

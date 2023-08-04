@@ -42,6 +42,73 @@ var c = new Chart(ctx, {
         }
     }
 })
+const salesChart = document.getElementById('mySalesChart');
+
+var sc = new Chart(salesChart, {
+    type: 'line',
+    data: {
+        labels: ['Jan','Feb','Mar','Apr','May','Jun'],
+        datasets: [{
+            label: 'Sales',
+            data: [14,15,16,20,6,13],
+            borderWidth: 1
+        }]
+    },
+    options: {
+        scales: {
+            y: {
+                beginAtZero: true
+            }
+        }
+    }
+})
+
+const purchasesChart = document.getElementById('myPurchasesChart');
+
+var pc = new Chart(purchasesChart, {
+    type: 'bar',
+    data: {
+        labels: ['Jan','Feb','Mar','Apr','May','Jun'],
+        datasets: [{
+            label: 'Sales',
+            data: [23,5,65,45,33,50],
+            borderWidth: 1
+        }]
+    },
+    options: {
+        scales: {
+            y: {
+                beginAtZero: true
+            }
+        }
+    }
+})
+
+const profitChart = document.getElementById('myProfitChart');
+
+var prc = new Chart(profitChart, {
+    type: 'doughnut',
+    data: {
+        labels: ['Jan','Feb','Mar','Apr','May','Jun'],
+        datasets: [{
+            label: 'Profits',
+            data: [23,5,65,45,33,50],
+            borderWidth: 1
+        }]
+    },
+    options: {
+        scales: {
+            y: {
+                beginAtZero: true
+            }
+        }
+    }
+})
+
+
+
+
+
 $(document).ready(function () {
 
     var shoppingList = [];
